@@ -244,7 +244,7 @@ export default class DataSourcePanel extends React.Component<DataSourcePanelProp
                            styles={{
                               control: (baseStyles, state) => ({
                                  ...baseStyles,
-                                 backgroundColor: '#1f4a4a',
+                                 backgroundColor: '1c4747',
                                  borderColor: '#472f61'
                               }),
                               singleValue: (baseStyles, state) => ({

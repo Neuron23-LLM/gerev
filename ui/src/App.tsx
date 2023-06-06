@@ -6,9 +6,9 @@ import { Tooltip } from 'react-tooltip'
 
 import EnterImage from './assets/images/enter.svg';
 import WarningImage from './assets/images/warning.svg';
-import DiscordImage from './assets/images/neuron23.jpeg';
+import DiscordImage from './assets/images/neuron23logo.svg';
 
-import { GiSocks } from "react-icons/gi";
+import { GiBrain } from "react-icons/gi";
 
 import './assets/css/App.css';
 import SearchBar from "./components/search-bar";
@@ -72,7 +72,7 @@ const modalCustomStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    background: '#1f4a4a',
+    background: '1c4747',
     width: '52vw',
     border: 'solid #694f94 0.5px',
     borderRadius: '12px',
@@ -415,7 +415,7 @@ export default class App extends React.Component<{}, AppState>{
             </div>
           </div>
         }
-        {/* Discord page */}
+        {/* Discord page
         {
           !this.state.didPassDiscord &&
           <div className='absolute z-30 flex flex-col items-center top-40 mx-auto w-full'>
@@ -452,6 +452,7 @@ export default class App extends React.Component<{}, AppState>{
 
           </div>
         }
+        */}
         {/* Not ready yet page */}
         {
           this.state.showNotReady &&
@@ -490,9 +491,9 @@ export default class App extends React.Component<{}, AppState>{
             !this.state.showResultsPage &&
             <div className='relative flex flex-col items-center top-40 mx-auto w-full'>
               <h1 className='flex flex-row items-center text-7xl text-center text-white m-10'>
-                <GiSocks className={('text-7xl text-center mt-4 mr-7' + this.getSocksColor())}></GiSocks>
+                <GiBrain className={('text-7xl text-center mt-4 mr-7' + this.getSocksColor())}></GiBrain>
                 <span className={("text-transparent	block font-source-sans-pro md:leading-normal bg-clip-text bg-gradient-to-l " + this.getTitleGradient())}>
-                  gerev.ai
+                  Neuron23 AI
                 </span>
               </h1>
               <SearchBar widthPercentage={32} isDisabled={this.state.isServerDown} query={this.state.query} isLoading={this.state.isLoading} showReset={this.state.results.length > 0}
@@ -511,7 +512,7 @@ export default class App extends React.Component<{}, AppState>{
             this.state.showResultsPage &&
             <div className="relative flex flex-row top-20 left-5 w-full sm:w-11/12">
               <span className='flex flex-row items-start text-3xl text-center text-white m-10 mx-7 mt-0'>
-                <GiSocks className='text-4xl text-[#A78BF6] mx-3 my-1'></GiSocks>
+                <GiBrain className='text-4xl text-[#A78BF6] mx-3 my-1'></GiBrain>
                 <span className="text-transparent	block font-source-sans-pro md:leading-normal bg-clip-text bg-gradient-to-l from-[#FFFFFF_24.72%] to-[#B8ADFF_74.45%]">gerev.ai</span>
               </span>
               <div className="flex flex-col items-start w-full sm:w-10/12">
