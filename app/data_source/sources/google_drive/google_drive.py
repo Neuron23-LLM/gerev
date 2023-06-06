@@ -26,8 +26,7 @@ logger = logging.getLogger(__name__)
 
 class GoogleDriveConfig(BaseDataSourceConfig):
     json_str: str
-
-
+    
 class GoogleDriveDataSource(BaseDataSource):
     mime_type_to_parser = {
         'application/vnd.google-apps.document': html_to_text,

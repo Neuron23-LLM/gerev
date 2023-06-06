@@ -244,7 +244,7 @@ export default class DataSourcePanel extends React.Component<DataSourcePanelProp
                            styles={{
                               control: (baseStyles, state) => ({
                                  ...baseStyles,
-                                 backgroundColor: '#352c45',
+                                 backgroundColor: '#1f4a4a',
                                  borderColor: '#472f61'
                               }),
                               singleValue: (baseStyles, state) => ({
@@ -658,4 +658,3 @@ export default class DataSourcePanel extends React.Component<DataSourcePanelProp
       this.setState({ editMode: !this.state.editMode })
    }
 }
-
