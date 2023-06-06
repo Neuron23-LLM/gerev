@@ -5,6 +5,10 @@
 
 @import 'custom-fonts.css';
 
+.font-helvetica-neue-medium {
+  font-family: 'HelveticaNeue-Medium', Arial, sans-serif;
+  font-weight: 400;
+}
 
 body {
   background-color: #1c4747;

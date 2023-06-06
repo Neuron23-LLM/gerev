@@ -492,7 +492,7 @@ export default class App extends React.Component<{}, AppState>{
             <div className='relative flex flex-col items-center top-40 mx-auto w-full'>
               <h1 className='flex flex-row items-center text-7xl text-center text-white m-10'>
                 <GiBrain className={('text-7xl text-center mt-4 mr-7' + this.getSocksColor())}></GiBrain>
-                <span className={("text-transparent	block font-source-sans-pro md:leading-normal bg-clip-text bg-gradient-to-l " + this.getTitleGradient())}>
+                <span className={("text-transparent block font-helvetica-neue-medium md:leading-normal bg-clip-text bg-gradient-to-l " + this.getTitleGradient())}>
                   Neuron23 AI
                 </span>
               </h1>
