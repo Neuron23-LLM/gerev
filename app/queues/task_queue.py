@@ -1,8 +1,7 @@
 import threading
 from dataclasses import dataclass
 from typing import Optional
-
-from persistqueue import SQLiteAckQueue, Empty
+from queue import Queue, Empty
 
 from paths import SQLITE_TASKS_PATH
 
@@ -21,7 +20,7 @@ class TaskQueueItem:
     task: Task
 
 
-class TaskQueue(SQLiteAckQueue):
+class TaskQueue:
     _instance = None
     _lock = threading.Lock()
 
@@ -36,16 +35,19 @@ class TaskQueue(SQLiteAckQueue):
         if TaskQueue._instance is not None:
             raise RuntimeError("TaskQueue is a singleton, use .get() to get the instance")
 
+        self.queue = Queue()
         self.condition = threading.Condition()
-        super().__init__(path=SQLITE_TASKS_PATH, multithreading=True, name="task")
 
     def add_task(self, task: Task):
-        self.put(task)
+        self.queue.put(task)
 
     def get_task(self, timeout=1) -> Optional[TaskQueueItem]:
         try:
-            raw_item = super().get(raw=True, block=True, timeout=timeout)
+            raw_item = self.queue.get(block=True, timeout=timeout)
             return TaskQueueItem(queue_item_id=raw_item['pqid'], task=raw_item['data'])
 
         except Empty:
             return None
+        
+    def qsize(self):
+        return self.queue.qsize()

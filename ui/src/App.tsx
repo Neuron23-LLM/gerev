@@ -6,7 +6,7 @@ import { Tooltip } from 'react-tooltip'
 
 import EnterImage from './assets/images/enter.svg';
 import WarningImage from './assets/images/warning.svg';
-import DiscordImage from './assets/images/discord.png';
+import DiscordImage from './assets/images/neuron23.jpeg';
 
 import { GiSocks } from "react-icons/gi";
 
@@ -72,7 +72,7 @@ const modalCustomStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    background: '#221f2e',
+    background: '#1f4a4a',
     width: '52vw',
     border: 'solid #694f94 0.5px',
     borderRadius: '12px',
@@ -226,12 +226,14 @@ export default class App extends React.Component<{}, AppState>{
     }).catch((err) => {
       this.setState({ serverDownCount: this.state.serverDownCount + 1 });
 
+      {/* 
       if (this.state.serverDownCount > 5 && !document.hidden) {  // if it's 6 seconds since last server down, show a toast
         toast.dismiss();
         toast.error(`Server is not responding (retrying...)`, { autoClose: (timeBetweenFailToast - 1) * 1000 });
         this.setState({ isServerDown: true, serverDownCount: 0 });
       }
       setTimeout(() => this.fetchStatsusForever(), failSleepSeconds * 1000);
+      */}
     })
   }
 
@@ -350,11 +352,11 @@ export default class App extends React.Component<{}, AppState>{
       <div>
         <Tooltip id="my-tooltip" style={{ fontSize: "18px" }} />
         <ToastContainer className='z-50' theme="colored" />
-        <a href="https://discord.gg/NKhTX7JZAF" rel="noreferrer" target='_blank'>
+        <a href="https://neuron23.com" rel="noreferrer" target='_blank'>
           <img data-tooltip-id="my-tooltip" src={DiscordImage}
-            data-tooltip-content="Click for 24/7🕒 live support 👨‍🔧💬"
+            data-tooltip-content="Learn more about Neuron23!"
             data-tooltip-place="bottom" alt="discord"
-            className="absolute left-0 z-30 h-7 hover:fill-[#a7a1fe] fill-[#8983e0] float-left ml-6 mt-6 text-[42px] hover:cursor-pointer transition-all duration-300 hover:drop-shadow-2xl">
+            className="absolute left-0 z-30 h-10 hover:fill-[#a7a1fe] fill-[#8983e0] float-left ml-6 mt-6 text-[42px] hover:cursor-pointer transition-all duration-300 hover:drop-shadow-2xl">
           </img>
         </a>
         <span className={"absolute right-0 z-30 float-right mr-6 mt-6 flex flex-row " + (this.state.languageOpen ? "items-start" : "items-center")}>

@@ -12,6 +12,16 @@ def pdf_to_text(input_filename: str) -> str:
 	
 	return text
 
+def split_PDF_into_paragraphs(input_filename: str) -> List[str]:
+    pdf_file = PdfReader(input_filename)
+    paragraphs = []
+    
+    for page in pdf_file.pages:
+        text = page.extract_text().strip()
+        if text:
+            paragraphs.append(text)
+    
+    return paragraphs
 
 def pdf_to_textV2(input_filename: str) -> str:
 	loader = PyPDFLoader(input_filename)
